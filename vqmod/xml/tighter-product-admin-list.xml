@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<modification
+                xmlns="https://github.com/vqmod/vqmod"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd">
+                >
+		<id>Tighter product admin list</id>
+		<version>1.0</version>
+		<vqmver>2.6.6</vqmver>
+		<author>Are Nybakk</author>
+		<file name="admin/view/template/catalog/product_list.twig">
+			<operation info="remove image column header">
+				<search position="replace"><![CDATA[
+				<td class="text-center">{{ column_image }}</td>
+				]]></search>
+				<add><![CDATA[
+				]]></add>
+			</operation>
+			<operation info="remove image column cell">
+				<search position="replace"><![CDATA[
+				<td class="text-center">{% if product.image %} <img src="{{ product.image }}" alt="{{ product.name }}" class="img-thumbnail" /> {% else %} <span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span> {% endif %}</td>
+				]]></search>
+				<add><![CDATA[
+				]]></add>
+			</operation>
+			<operation info="shrink edit button">
+				<search position="replace"><![CDATA[
+				<td class="text-right"><a href="{{ product.edit }}"
+				]]></search>
+				<add><![CDATA[
+        <td class="text-right"><a href="{{ product.edit }}" style="padding: 2px 5px" 
+				]]></add>
+			</operation>
+		</file>
+	</modification>

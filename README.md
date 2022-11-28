@@ -1,2 +1,2 @@
 # opencart-tighter-product-admin-list
- Modifies the product admin list so that it uses less space.
+ Modifies the product admin list so that it uses less space. Requires installation of vqmod.
